@@ -3,7 +3,7 @@ Simple decryption/encryption system based on CodeStage's AntiCheat toolkit.
 Primarily made for [Slendytubbies 3](https://zeoworks.com/games/Slendytubbies3.html)
 but can also work for other games, as long as they use [ACTk](https://codestage.net/uas/actk/)
 
-# Troubleshooting
+# Troubleshooting (mostly for v0.1.0)
 ### Where do I find the cryptokey?
 The key will **always** be stored inside the key named as the MD2 hash of "ElonShotMarsWithACar" (9978e9f39c218d674463dab9dc728bd6)
 inside the game's registry. There it will be in base64 and can be easily decoded.  
@@ -23,5 +23,6 @@ Make sure you didn't put the whole key name (e.g "AAAAAA==\_h542588110")
 or you didn't include an invalid character (like the dot at the end of a value,
 it's for some unknown reason placed there and it isn't part of the base64 code)
 
-### Where's the source code?
-I currently don't plan to share the source code although I managed to create this by using and analysing ACTk's own source code.
+### I can't compile from code because of the missing files
+I've decided to include only the Windows Forms source code, the "missing code"  
+is in a submodule that is a private repository so you'll have to make your own decryption/encrytion code.
