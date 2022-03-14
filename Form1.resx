@@ -57,46 +57,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 9</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 15</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Just type the crypto key and you can decrypt (almost) anything!</value>
-  </data>
-  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="cryptoKeyBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 36</value>
+    <value>43, 46</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cryptoKeyBox.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="cryptoKeyBox.PlaceholderText" xml:space="preserve">
-    <value>Insert crypto key here...</value>
   </data>
   <data name="cryptoKeyBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 23</value>
@@ -111,13 +78,13 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cryptoKeyBox.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>regGroupBox</value>
   </data>
   <data name="&gt;&gt;cryptoKeyBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="textBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 65</value>
+    <value>526, 207</value>
   </data>
   <data name="textBox.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -126,7 +93,7 @@
     <value>Insert text to decrypt here...</value>
   </data>
   <data name="textBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 39</value>
+    <value>169, 23</value>
   </data>
   <data name="textBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -141,13 +108,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="encryptModeCheck.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="encryptModeCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 60</value>
+    <value>556, 129</value>
   </data>
   <data name="encryptModeCheck.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 19</value>
@@ -168,10 +135,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;encryptModeCheck.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
+  </data>
+  <data name="decencButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="decencButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 132</value>
+    <value>299, 46</value>
   </data>
   <data name="decencButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -189,10 +159,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;decencButton.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>regGroupBox</value>
   </data>
   <data name="&gt;&gt;decencButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="valueModeCheck.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -202,7 +172,7 @@
     <value>NoControl</value>
   </data>
   <data name="valueModeCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 85</value>
+    <value>537, 154</value>
   </data>
   <data name="valueModeCheck.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 19</value>
@@ -223,13 +193,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;valueModeCheck.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="resultBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="resultBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 110</value>
+    <value>537, 246</value>
   </data>
   <data name="resultBox.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -253,7 +223,215 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;resultBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="getKeyButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="getKeyButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>380, 46</value>
+  </data>
+  <data name="getKeyButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="getKeyButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="getKeyButton.Text" xml:space="preserve">
+    <value>Find Key</value>
+  </data>
+  <data name="&gt;&gt;getKeyButton.Name" xml:space="preserve">
+    <value>getKeyButton</value>
+  </data>
+  <data name="&gt;&gt;getKeyButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;getKeyButton.Parent" xml:space="preserve">
+    <value>regGroupBox</value>
+  </data>
+  <data name="&gt;&gt;getKeyButton.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="loadButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>218, 46</value>
+  </data>
+  <data name="loadButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="loadButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="loadButton.Text" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="&gt;&gt;loadButton.Name" xml:space="preserve">
+    <value>loadButton</value>
+  </data>
+  <data name="&gt;&gt;loadButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loadButton.Parent" xml:space="preserve">
+    <value>regGroupBox</value>
+  </data>
+  <data name="&gt;&gt;loadButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 48</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 15</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>regGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 20</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 15</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>regGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="registryPathBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 17</value>
+  </data>
+  <data name="registryPathBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>306, 23</value>
+  </data>
+  <data name="registryPathBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="registryPathBox.Text" xml:space="preserve">
+    <value>SOFTWARE\DefaultCompany\BigChungiGaming
+</value>
+  </data>
+  <data name="&gt;&gt;registryPathBox.Name" xml:space="preserve">
+    <value>registryPathBox</value>
+  </data>
+  <data name="&gt;&gt;registryPathBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;registryPathBox.Parent" xml:space="preserve">
+    <value>regGroupBox</value>
+  </data>
+  <data name="&gt;&gt;registryPathBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="regGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="regGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 77</value>
+  </data>
+  <data name="regGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="regGroupBox.Text" xml:space="preserve">
+    <value>Registry</value>
+  </data>
+  <data name="&gt;&gt;regGroupBox.Name" xml:space="preserve">
+    <value>regGroupBox</value>
+  </data>
+  <data name="&gt;&gt;regGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;regGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;regGroupBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="progressBar1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 100</value>
+  </data>
+  <data name="progressBar1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>306, 23</value>
+  </data>
+  <data name="progressBar1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;progressBar1.Name" xml:space="preserve">
+    <value>progressBar1</value>
+  </data>
+  <data name="&gt;&gt;progressBar1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;progressBar1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;progressBar1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="keyViewList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 129</value>
+  </data>
+  <data name="keyViewList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 208</value>
+  </data>
+  <data name="keyViewList.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;keyViewList.Name" xml:space="preserve">
+    <value>keyViewList</value>
+  </data>
+  <data name="&gt;&gt;keyViewList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;keyViewList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;keyViewList.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="namesCol.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="namesCol.Width" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <data name="valuesCol.Text" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="valuesCol.Width" type="System.Int32, mscorlib">
+    <value>200</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -268,7 +446,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>379, 167</value>
+    <value>722, 375</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -318,6 +496,18 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>CodeStage Decrypter</value>
+  </data>
+  <data name="&gt;&gt;namesCol.Name" xml:space="preserve">
+    <value>namesCol</value>
+  </data>
+  <data name="&gt;&gt;namesCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;valuesCol.Name" xml:space="preserve">
+    <value>valuesCol</value>
+  </data>
+  <data name="&gt;&gt;valuesCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>DecrypterForm</value>

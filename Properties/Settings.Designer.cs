@@ -34,5 +34,17 @@ namespace CodeStage_Decrypter.Properties {
                 this["SavedKey"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RegPath {
+            get {
+                return ((string)(this["RegPath"]));
+            }
+            set {
+                this["RegPath"] = value;
+            }
+        }
     }
 }

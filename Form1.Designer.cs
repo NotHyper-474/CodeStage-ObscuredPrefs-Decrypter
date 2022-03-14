@@ -4,7 +4,6 @@ namespace CodeStage_Decrypter
 {
 	public partial class DecrypterForm
 	{
-		private Label label1;
 		private TextBox cryptoKeyBox;
 		private TextBox textBox;
 		private CheckBox encryptModeCheck;
@@ -19,19 +18,24 @@ namespace CodeStage_Decrypter
 		private void InitializeComponent()
 		{
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DecrypterForm));
-            this.label1 = new System.Windows.Forms.Label();
             this.cryptoKeyBox = new System.Windows.Forms.TextBox();
             this.textBox = new System.Windows.Forms.TextBox();
             this.encryptModeCheck = new System.Windows.Forms.CheckBox();
             this.decencButton = new System.Windows.Forms.Button();
             this.valueModeCheck = new System.Windows.Forms.CheckBox();
             this.resultBox = new System.Windows.Forms.TextBox();
+            this.regGroupBox = new System.Windows.Forms.GroupBox();
+            this.loadButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.registryPathBox = new System.Windows.Forms.TextBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.keyViewList = new System.Windows.Forms.ListView();
+            this.namesCol = new System.Windows.Forms.ColumnHeader();
+            this.valuesCol = new System.Windows.Forms.ColumnHeader();
+            this.getKeyButton = new System.Windows.Forms.Button();
+            this.regGroupBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
             // 
             // cryptoKeyBox
             // 
@@ -72,17 +76,85 @@ namespace CodeStage_Decrypter
             this.resultBox.Name = "resultBox";
             this.resultBox.ReadOnly = true;
             // 
+            // regGroupBox
+            // 
+            this.regGroupBox.Controls.Add(this.getKeyButton);
+            this.regGroupBox.Controls.Add(this.loadButton);
+            this.regGroupBox.Controls.Add(this.label2);
+            this.regGroupBox.Controls.Add(this.label1);
+            this.regGroupBox.Controls.Add(this.decencButton);
+            this.regGroupBox.Controls.Add(this.registryPathBox);
+            this.regGroupBox.Controls.Add(this.cryptoKeyBox);
+            resources.ApplyResources(this.regGroupBox, "regGroupBox");
+            this.regGroupBox.Name = "regGroupBox";
+            this.regGroupBox.TabStop = false;
+            // 
+            // loadButton
+            // 
+            resources.ApplyResources(this.loadButton, "loadButton");
+            this.loadButton.Name = "loadButton";
+            this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // registryPathBox
+            // 
+            resources.ApplyResources(this.registryPathBox, "registryPathBox");
+            this.registryPathBox.Name = "registryPathBox";
+            this.registryPathBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // progressBar1
+            // 
+            resources.ApplyResources(this.progressBar1, "progressBar1");
+            this.progressBar1.Name = "progressBar1";
+            // 
+            // keyViewList
+            // 
+            this.keyViewList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.namesCol,
+            this.valuesCol});
+            this.keyViewList.HideSelection = false;
+            resources.ApplyResources(this.keyViewList, "keyViewList");
+            this.keyViewList.Name = "keyViewList";
+            this.keyViewList.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.keyViewList.UseCompatibleStateImageBehavior = false;
+            this.keyViewList.View = System.Windows.Forms.View.Details;
+            // 
+            // namesCol
+            // 
+            resources.ApplyResources(this.namesCol, "namesCol");
+            // 
+            // valuesCol
+            // 
+            resources.ApplyResources(this.valuesCol, "valuesCol");
+            // 
+            // getKeyButton
+            // 
+            resources.ApplyResources(this.getKeyButton, "getKeyButton");
+            this.getKeyButton.Name = "getKeyButton";
+            this.getKeyButton.UseVisualStyleBackColor = true;
+            this.getKeyButton.Click += new System.EventHandler(this.getKeyButton_Click);
+            // 
             // DecrypterForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.keyViewList);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.regGroupBox);
             this.Controls.Add(this.resultBox);
             this.Controls.Add(this.valueModeCheck);
-            this.Controls.Add(this.decencButton);
             this.Controls.Add(this.encryptModeCheck);
             this.Controls.Add(this.textBox);
-            this.Controls.Add(this.cryptoKeyBox);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "DecrypterForm";
@@ -90,9 +162,23 @@ namespace CodeStage_Decrypter
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Enter += new System.EventHandler(this.DecrypterForm_Enter);
             this.Leave += new System.EventHandler(this.DecrypterForm_Leave);
+            this.regGroupBox.ResumeLayout(false);
+            this.regGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
 		}
-	}
+
+        private GroupBox regGroupBox;
+        private Label label1;
+        private TextBox registryPathBox;
+        private Label label2;
+        private System.ComponentModel.IContainer components;
+        private Button loadButton;
+        private ProgressBar progressBar1;
+        private ListView keyViewList;
+        private ColumnHeader namesCol;
+        private ColumnHeader valuesCol;
+        private Button getKeyButton;
+    }
 }
