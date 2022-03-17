@@ -2,10 +2,14 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>CodeStage_Decrypter</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>Resources\decIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
 
   <ItemGroup>
@@ -50,7 +54,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="CustomControls\" />
     <Folder Include="Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ObjectListView.Official" Version="2.9.1" />
   </ItemGroup>
 
 </Project>
