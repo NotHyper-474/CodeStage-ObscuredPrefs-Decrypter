@@ -15,7 +15,7 @@ If you're testing using a Unity project then it will be at HKEY_CURRENT_USER\SOF
 
 ### It works but it's just giving me gibberish
 The game might be using an older version of ACTk.
-The system is still the same but the key will always be "e806f6"  
+The system is still the same but the key will always be "e806f6" (unless the developer manually changed it) 
 Also make sure you placed the cryptokey itself and not its base64 version.
 
 ### It's saying the base64 code is invalid
