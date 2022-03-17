@@ -21,7 +21,7 @@ Also make sure you placed the cryptokey itself and not its base64 version.
 ### It's saying the base64 code is invalid
 Make sure you didn't put the whole key name (e.g "AAAAAA==\_h542588110")
 or you didn't include an invalid character (like the dot at the end of a value,
-it's for some unknown reason placed there and it isn't part of the base64 code)
+it is just a trailing character and isn't part of the base64 code)
 
 ### I can't compile from code because of the missing files
 I've decided to include only the Windows Forms source code, the "missing code"  
