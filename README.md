@@ -1,5 +1,5 @@
 # Overview
-Simple decryption/encryption system based on CodeStage's AntiCheat toolkit.  
+Simple decrypter, encrypter and viewer for CodeStage's AntiCheat toolkit.  
 Primarily made for [Slendytubbies 3](https://zeoworks.com/games/Slendytubbies3.html)
 but can also work for other games, as long as they use [ACTk](https://codestage.net/uas/actk/)
 
