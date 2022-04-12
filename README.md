@@ -1,5 +1,5 @@
 # Overview
-Simple decrypter, encrypter and viewer for CodeStage's AntiCheat toolkit.  
+Simple decrypter, encrypter and viewer (see reg-viewer branch) for CodeStage's AntiCheat toolkit.  
 Primarily made for [ACTk](https://codestage.net/uas/actk/) games.
 
 # Troubleshooting (mostly for v0.1.0)
