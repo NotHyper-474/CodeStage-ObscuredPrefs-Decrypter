@@ -66,7 +66,7 @@
     <value>True</value>
   </data>
   <data name="cryptoKeyBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 23</value>
+    <value>73, 23</value>
   </data>
   <data name="cryptoKeyBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -81,13 +81,13 @@
     <value>regGroupBox</value>
   </data>
   <data name="&gt;&gt;cryptoKeyBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="decencButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="decencButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 46</value>
+    <value>384, 45</value>
   </data>
   <data name="decencButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -108,13 +108,61 @@
     <value>regGroupBox</value>
   </data>
   <data name="&gt;&gt;decencButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
+  </data>
+  <data name="versionUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>255, 45</value>
+  </data>
+  <data name="versionUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 23</value>
+  </data>
+  <data name="versionUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;versionUpDown.Name" xml:space="preserve">
+    <value>versionUpDown</value>
+  </data>
+  <data name="&gt;&gt;versionUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;versionUpDown.Parent" xml:space="preserve">
+    <value>regGroupBox</value>
+  </data>
+  <data name="&gt;&gt;versionUpDown.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 49</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 15</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>regGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="getKeyButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="getKeyButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>380, 46</value>
+    <value>122, 46</value>
   </data>
   <data name="getKeyButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -135,10 +183,10 @@
     <value>regGroupBox</value>
   </data>
   <data name="&gt;&gt;getKeyButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="loadButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 46</value>
+    <value>384, 17</value>
   </data>
   <data name="loadButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -159,10 +207,10 @@
     <value>regGroupBox</value>
   </data>
   <data name="&gt;&gt;loadButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="progressBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 75</value>
+    <value>10, 75</value>
   </data>
   <data name="progressBar1.Size" type="System.Drawing.Size, System.Drawing">
     <value>449, 23</value>
@@ -180,7 +228,7 @@
     <value>regGroupBox</value>
   </data>
   <data name="&gt;&gt;progressBar1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -207,7 +255,7 @@
     <value>regGroupBox</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -234,13 +282,13 @@
     <value>regGroupBox</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="registryPathBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>43, 17</value>
   </data>
   <data name="registryPathBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>306, 23</value>
+    <value>290, 23</value>
   </data>
   <data name="registryPathBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -259,7 +307,7 @@
     <value>regGroupBox</value>
   </data>
   <data name="&gt;&gt;registryPathBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="regGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
@@ -283,7 +331,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;regGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="saveDumpButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 48</value>
@@ -407,7 +455,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dumpGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="dumpSaveDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -446,7 +494,64 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;keyViewList.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <metadata name="cellContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>161, 17</value>
+  </metadata>
+  <data name="intToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="intToolStripMenuItem.Text" xml:space="preserve">
+    <value>Int</value>
+  </data>
+  <data name="floatToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="floatToolStripMenuItem.Text" xml:space="preserve">
+    <value>Float</value>
+  </data>
+  <data name="stringToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="stringToolStripMenuItem.Text" xml:space="preserve">
+    <value>String</value>
+  </data>
+  <data name="createKeyMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 22</value>
+  </data>
+  <data name="createKeyMenuItem.Text" xml:space="preserve">
+    <value>New Key</value>
+  </data>
+  <data name="dumpThisKeyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 22</value>
+  </data>
+  <data name="dumpThisKeyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dump Key</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 22</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Delete Key</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 6</value>
+  </data>
+  <data name="seeDecryptedNameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 22</value>
+  </data>
+  <data name="seeDecryptedNameToolStripMenuItem.Text" xml:space="preserve">
+    <value>See Decrypted Name</value>
+  </data>
+  <data name="cellContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 120</value>
+  </data>
+  <data name="&gt;&gt;cellContextMenu.Name" xml:space="preserve">
+    <value>cellContextMenu</value>
+  </data>
+  <data name="&gt;&gt;cellContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -529,6 +634,54 @@
   </data>
   <data name="&gt;&gt;valueColumn.Type" xml:space="preserve">
     <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;createKeyMenuItem.Name" xml:space="preserve">
+    <value>createKeyMenuItem</value>
+  </data>
+  <data name="&gt;&gt;createKeyMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;intToolStripMenuItem.Name" xml:space="preserve">
+    <value>intToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;intToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;floatToolStripMenuItem.Name" xml:space="preserve">
+    <value>floatToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;floatToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stringToolStripMenuItem.Name" xml:space="preserve">
+    <value>stringToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;stringToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dumpThisKeyToolStripMenuItem.Name" xml:space="preserve">
+    <value>dumpThisKeyToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;dumpThisKeyToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteToolStripMenuItem.Name" xml:space="preserve">
+    <value>deleteToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;deleteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;seeDecryptedNameToolStripMenuItem.Name" xml:space="preserve">
+    <value>seeDecryptedNameToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;seeDecryptedNameToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>DecrypterForm</value>

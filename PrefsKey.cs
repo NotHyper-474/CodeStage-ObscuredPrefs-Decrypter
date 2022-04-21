@@ -15,6 +15,9 @@ namespace CodeStage_Decrypter
             oldHash = this.oldHash;
         }
 
+        public PrefsKey(string name, object value) : this(name, value, out _)
+        { }
+
         public string HashedName
         {
             get => isEditing ? Name : GetHashedKey(Name);
@@ -26,28 +29,44 @@ namespace CodeStage_Decrypter
             }
         }
         public string Name { get; set; }
-        public object Value { get; set; }
+        public object Value
+        {
+            get => _value;
+            set
+            {
+                // PlayerPrefs can only have float, int, and string
+                if (value != null && value.GetType() == typeof(double))
+                {
+                    _value = (float)(double)value;
+                    return;
+                }
+                _value = value;
+            }
+        }
         public uint Hash { get; set; }
 
         public uint oldHash { get; protected set; }
 
         public bool isEditing;
 
-        public void Encrypt(string key)
+        private object _value;
+
+        public void Encrypt(string cryptoKey)
         {
-            HashedName = EncrypterDecrypter.Encrypt(Name, key.ToCharArray());
-            Value = EncrypterDecrypter.EncryptObject(Value, key);
+            var decryptedPrefs = Name;
+            HashedName = EncrypterDecrypter.Encrypt(Name, cryptoKey.ToCharArray());
+            Value = EncrypterDecrypter.EncryptObject(Value, decryptedPrefs);
         }
 
-        public bool Decrypt(string key)
+        public bool Decrypt(string cryptoKey)
         {
             if (!Base64Utils.IsBase64(Name))
                 return false;
             // Clear (possible) trailing character
-            if (Value.GetType() == typeof(string))
-                Value = ((string)Value).TrimEnd(char.MinValue);
-            HashedName = EncrypterDecrypter.Decrypt(Name, key.ToCharArray());
-            Value = EncrypterDecrypter.DecryptObject(Value.ToString(), key);
+            if (Value is string str)
+                Value = str.TrimEnd(char.MinValue);
+            HashedName = EncrypterDecrypter.Decrypt(Name, cryptoKey.ToCharArray());
+            Value = EncrypterDecrypter.DecryptObject(Value.ToString(), Name);
             return true;
         }
 

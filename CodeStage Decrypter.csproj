@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="blank.bmp" />
     <None Remove="decIcon.ico" />
     <None Remove="encIcon.ico" />
   </ItemGroup>
@@ -54,12 +55,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CustomControls\" />
-    <Folder Include="Resources\" />
+    <PackageReference Include="ObjectListView.Official" Version="2.9.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ObjectListView.Official" Version="2.9.1" />
+    <Reference Include="UnityEngine">
+      <HintPath>E:\Programs\Unity Technologies\2021.2.19f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="blank.bmp" />
   </ItemGroup>
 
 </Project>
