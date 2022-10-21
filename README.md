@@ -1,6 +1,6 @@
 # Overview
 Simple decrypter, encrypter and viewer for CodeStage's AntiCheat toolkit.  
-Primarily made for [ACTk](https://codestage.net/uas/actk/) games.
+See [ACTk](https://codestage.net/uas/actk/) for more context.
 
 # Troubleshooting (mostly for v0.1.0)
 ### Where do I find the cryptokey?
