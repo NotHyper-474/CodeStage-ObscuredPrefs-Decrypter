@@ -138,7 +138,7 @@
     <value>203, 49</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 15</value>
+    <value>45, 15</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -518,34 +518,34 @@
     <value>String</value>
   </data>
   <data name="createKeyMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>164, 22</value>
   </data>
   <data name="createKeyMenuItem.Text" xml:space="preserve">
     <value>New Key</value>
   </data>
   <data name="dumpThisKeyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>164, 22</value>
   </data>
   <data name="dumpThisKeyToolStripMenuItem.Text" xml:space="preserve">
-    <value>Dump Key</value>
+    <value>Dump Selected Key(s)</value>
   </data>
   <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>164, 22</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>Delete Key</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 6</value>
+    <value>161, 6</value>
   </data>
   <data name="seeDecryptedNameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>164, 22</value>
   </data>
   <data name="seeDecryptedNameToolStripMenuItem.Text" xml:space="preserve">
     <value>See Decrypted Name</value>
   </data>
   <data name="cellContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 120</value>
+    <value>165, 98</value>
   </data>
   <data name="&gt;&gt;cellContextMenu.Name" xml:space="preserve">
     <value>cellContextMenu</value>

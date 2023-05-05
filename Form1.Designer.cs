@@ -10,312 +10,292 @@ namespace CodeStage_Decrypter
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
+			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DecrypterForm));
-			this.cryptoKeyBox = new System.Windows.Forms.TextBox();
-			this.decencButton = new System.Windows.Forms.Button();
-			this.regGroupBox = new System.Windows.Forms.GroupBox();
-			this.versionUpDown = new System.Windows.Forms.NumericUpDown();
-			this.label4 = new System.Windows.Forms.Label();
-			this.getKeyButton = new System.Windows.Forms.Button();
-			this.loadButton = new System.Windows.Forms.Button();
-			this.progressBar1 = new System.Windows.Forms.ProgressBar();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.registryPathBox = new System.Windows.Forms.TextBox();
-			this.dumpGroupBox = new System.Windows.Forms.GroupBox();
-			this.saveDumpButton = new System.Windows.Forms.Button();
-			this.openDialogButton1 = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.dumpSaveDialog = new System.Windows.Forms.SaveFileDialog();
-			this.keyViewList = new BrightIdeasSoftware.ObjectListView();
-			this.nameColumn = new BrightIdeasSoftware.OLVColumn();
-			this.valueColumn = new BrightIdeasSoftware.OLVColumn();
-			this.cellContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.createKeyMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.intToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.floatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.stringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.dumpThisKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-			this.seeDecryptedNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.regGroupBox.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.versionUpDown)).BeginInit();
-			this.dumpGroupBox.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.keyViewList)).BeginInit();
-			this.cellContextMenu.SuspendLayout();
-			this.SuspendLayout();
+			cryptoKeyBox = new TextBox();
+			decencButton = new Button();
+			regGroupBox = new GroupBox();
+			versionUpDown = new NumericUpDown();
+			label4 = new Label();
+			getKeyButton = new Button();
+			loadButton = new Button();
+			progressBar1 = new ProgressBar();
+			label2 = new Label();
+			label1 = new Label();
+			registryPathBox = new TextBox();
+			dumpGroupBox = new GroupBox();
+			saveDumpButton = new Button();
+			openDialogButton1 = new Button();
+			textBox1 = new TextBox();
+			label3 = new Label();
+			dumpSaveDialog = new SaveFileDialog();
+			keyViewList = new BrightIdeasSoftware.ObjectListView();
+			nameColumn = new BrightIdeasSoftware.OLVColumn();
+			valueColumn = new BrightIdeasSoftware.OLVColumn();
+			cellContextMenu = new ContextMenuStrip(components);
+			createKeyMenuItem = new ToolStripMenuItem();
+			intToolStripMenuItem = new ToolStripMenuItem();
+			floatToolStripMenuItem = new ToolStripMenuItem();
+			stringToolStripMenuItem = new ToolStripMenuItem();
+			dumpThisKeyToolStripMenuItem = new ToolStripMenuItem();
+			deleteToolStripMenuItem = new ToolStripMenuItem();
+			toolStripSeparator1 = new ToolStripSeparator();
+			seeDecryptedNameToolStripMenuItem = new ToolStripMenuItem();
+			regGroupBox.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)versionUpDown).BeginInit();
+			dumpGroupBox.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)keyViewList).BeginInit();
+			cellContextMenu.SuspendLayout();
+			SuspendLayout();
 			// 
 			// cryptoKeyBox
 			// 
-			resources.ApplyResources(this.cryptoKeyBox, "cryptoKeyBox");
-			this.cryptoKeyBox.Name = "cryptoKeyBox";
-			this.cryptoKeyBox.TextChanged += new System.EventHandler(this.cryptoKeyBox_TextChanged);
+			resources.ApplyResources(cryptoKeyBox, "cryptoKeyBox");
+			cryptoKeyBox.Name = "cryptoKeyBox";
+			cryptoKeyBox.TextChanged += cryptoKeyBox_TextChanged;
 			// 
 			// decencButton
 			// 
-			resources.ApplyResources(this.decencButton, "decencButton");
-			this.decencButton.Name = "decencButton";
-			this.decencButton.UseVisualStyleBackColor = true;
-			this.decencButton.Click += new System.EventHandler(this.decencButton_Click);
+			resources.ApplyResources(decencButton, "decencButton");
+			decencButton.Name = "decencButton";
+			decencButton.UseVisualStyleBackColor = true;
+			decencButton.Click += decencButton_Click;
 			// 
 			// regGroupBox
 			// 
-			this.regGroupBox.Controls.Add(this.versionUpDown);
-			this.regGroupBox.Controls.Add(this.label4);
-			this.regGroupBox.Controls.Add(this.getKeyButton);
-			this.regGroupBox.Controls.Add(this.loadButton);
-			this.regGroupBox.Controls.Add(this.progressBar1);
-			this.regGroupBox.Controls.Add(this.label2);
-			this.regGroupBox.Controls.Add(this.label1);
-			this.regGroupBox.Controls.Add(this.decencButton);
-			this.regGroupBox.Controls.Add(this.registryPathBox);
-			this.regGroupBox.Controls.Add(this.cryptoKeyBox);
-			resources.ApplyResources(this.regGroupBox, "regGroupBox");
-			this.regGroupBox.Name = "regGroupBox";
-			this.regGroupBox.TabStop = false;
+			regGroupBox.Controls.Add(versionUpDown);
+			regGroupBox.Controls.Add(label4);
+			regGroupBox.Controls.Add(getKeyButton);
+			regGroupBox.Controls.Add(loadButton);
+			regGroupBox.Controls.Add(progressBar1);
+			regGroupBox.Controls.Add(label2);
+			regGroupBox.Controls.Add(label1);
+			regGroupBox.Controls.Add(decencButton);
+			regGroupBox.Controls.Add(registryPathBox);
+			regGroupBox.Controls.Add(cryptoKeyBox);
+			resources.ApplyResources(regGroupBox, "regGroupBox");
+			regGroupBox.Name = "regGroupBox";
+			regGroupBox.TabStop = false;
 			// 
 			// versionUpDown
 			// 
-			resources.ApplyResources(this.versionUpDown, "versionUpDown");
-			this.versionUpDown.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-			this.versionUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-			this.versionUpDown.Name = "versionUpDown";
-			this.versionUpDown.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-			this.versionUpDown.ValueChanged += new System.EventHandler(this.versionUpDown_ValueChanged);
+			resources.ApplyResources(versionUpDown, "versionUpDown");
+			versionUpDown.Maximum = new decimal(new int[] { 4, 0, 0, 0 });
+			versionUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+			versionUpDown.Name = "versionUpDown";
+			versionUpDown.Value = new decimal(new int[] { 3, 0, 0, 0 });
+			versionUpDown.ValueChanged += versionUpDown_ValueChanged;
 			// 
 			// label4
 			// 
-			resources.ApplyResources(this.label4, "label4");
-			this.label4.Name = "label4";
+			resources.ApplyResources(label4, "label4");
+			label4.Name = "label4";
 			// 
 			// getKeyButton
 			// 
-			resources.ApplyResources(this.getKeyButton, "getKeyButton");
-			this.getKeyButton.Name = "getKeyButton";
-			this.getKeyButton.UseVisualStyleBackColor = true;
-			this.getKeyButton.Click += new System.EventHandler(this.getKeyButton_Click);
+			resources.ApplyResources(getKeyButton, "getKeyButton");
+			getKeyButton.Name = "getKeyButton";
+			getKeyButton.UseVisualStyleBackColor = true;
+			getKeyButton.Click += getKeyButton_Click;
 			// 
 			// loadButton
 			// 
-			resources.ApplyResources(this.loadButton, "loadButton");
-			this.loadButton.Name = "loadButton";
-			this.loadButton.UseVisualStyleBackColor = true;
-			this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
+			resources.ApplyResources(loadButton, "loadButton");
+			loadButton.Name = "loadButton";
+			loadButton.UseVisualStyleBackColor = true;
+			loadButton.Click += loadButton_Click;
 			// 
 			// progressBar1
 			// 
-			resources.ApplyResources(this.progressBar1, "progressBar1");
-			this.progressBar1.Name = "progressBar1";
+			resources.ApplyResources(progressBar1, "progressBar1");
+			progressBar1.Name = "progressBar1";
 			// 
 			// label2
 			// 
-			resources.ApplyResources(this.label2, "label2");
-			this.label2.Name = "label2";
+			resources.ApplyResources(label2, "label2");
+			label2.Name = "label2";
 			// 
 			// label1
 			// 
-			resources.ApplyResources(this.label1, "label1");
-			this.label1.Name = "label1";
+			resources.ApplyResources(label1, "label1");
+			label1.Name = "label1";
 			// 
 			// registryPathBox
 			// 
-			resources.ApplyResources(this.registryPathBox, "registryPathBox");
-			this.registryPathBox.Name = "registryPathBox";
-			this.registryPathBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+			resources.ApplyResources(registryPathBox, "registryPathBox");
+			registryPathBox.Name = "registryPathBox";
+			registryPathBox.TextChanged += textBox1_TextChanged;
 			// 
 			// dumpGroupBox
 			// 
-			this.dumpGroupBox.Controls.Add(this.saveDumpButton);
-			this.dumpGroupBox.Controls.Add(this.openDialogButton1);
-			this.dumpGroupBox.Controls.Add(this.textBox1);
-			this.dumpGroupBox.Controls.Add(this.label3);
-			resources.ApplyResources(this.dumpGroupBox, "dumpGroupBox");
-			this.dumpGroupBox.Name = "dumpGroupBox";
-			this.dumpGroupBox.TabStop = false;
+			dumpGroupBox.Controls.Add(saveDumpButton);
+			dumpGroupBox.Controls.Add(openDialogButton1);
+			dumpGroupBox.Controls.Add(textBox1);
+			dumpGroupBox.Controls.Add(label3);
+			resources.ApplyResources(dumpGroupBox, "dumpGroupBox");
+			dumpGroupBox.Name = "dumpGroupBox";
+			dumpGroupBox.TabStop = false;
 			// 
 			// saveDumpButton
 			// 
-			resources.ApplyResources(this.saveDumpButton, "saveDumpButton");
-			this.saveDumpButton.Name = "saveDumpButton";
-			this.saveDumpButton.UseVisualStyleBackColor = true;
-			this.saveDumpButton.Click += new System.EventHandler(this.saveDumpButton_Click);
+			resources.ApplyResources(saveDumpButton, "saveDumpButton");
+			saveDumpButton.Name = "saveDumpButton";
+			saveDumpButton.UseVisualStyleBackColor = true;
+			saveDumpButton.Click += saveDumpButton_Click;
 			// 
 			// openDialogButton1
 			// 
-			resources.ApplyResources(this.openDialogButton1, "openDialogButton1");
-			this.openDialogButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.openDialogButton1.Name = "openDialogButton1";
-			this.openDialogButton1.UseVisualStyleBackColor = true;
-			this.openDialogButton1.Click += new System.EventHandler(this.openDialogButton1_Click);
+			resources.ApplyResources(openDialogButton1, "openDialogButton1");
+			openDialogButton1.DialogResult = DialogResult.OK;
+			openDialogButton1.Name = "openDialogButton1";
+			openDialogButton1.UseVisualStyleBackColor = true;
+			openDialogButton1.Click += openDialogButton1_Click;
 			// 
 			// textBox1
 			// 
-			resources.ApplyResources(this.textBox1, "textBox1");
-			this.textBox1.Name = "textBox1";
+			resources.ApplyResources(textBox1, "textBox1");
+			textBox1.Name = "textBox1";
 			// 
 			// label3
 			// 
-			resources.ApplyResources(this.label3, "label3");
-			this.label3.Name = "label3";
+			resources.ApplyResources(label3, "label3");
+			label3.Name = "label3";
 			// 
 			// dumpSaveDialog
 			// 
-			this.dumpSaveDialog.FileName = "dump";
-			resources.ApplyResources(this.dumpSaveDialog, "dumpSaveDialog");
+			dumpSaveDialog.FileName = "dump";
+			resources.ApplyResources(dumpSaveDialog, "dumpSaveDialog");
 			// 
 			// keyViewList
 			// 
-			this.keyViewList.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
-			this.keyViewList.CellEditUseWholeCell = false;
-			this.keyViewList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.nameColumn,
-            this.valueColumn});
-			this.keyViewList.Cursor = System.Windows.Forms.Cursors.Default;
-			this.keyViewList.GridLines = true;
-			this.keyViewList.HideSelection = false;
-			resources.ApplyResources(this.keyViewList, "keyViewList");
-			this.keyViewList.Name = "keyViewList";
-			this.keyViewList.ShowGroups = false;
-			this.keyViewList.UseCellFormatEvents = true;
-			this.keyViewList.View = System.Windows.Forms.View.Details;
-			this.keyViewList.FormatCell += new System.EventHandler<BrightIdeasSoftware.FormatCellEventArgs>(this.keyViewList_FormatCell);
-			this.keyViewList.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyViewList_KeyUp);
+			keyViewList.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+			keyViewList.CellEditUseWholeCell = false;
+			keyViewList.Columns.AddRange(new ColumnHeader[] { nameColumn, valueColumn });
+			keyViewList.GridLines = true;
+			keyViewList.HideSelection = false;
+			resources.ApplyResources(keyViewList, "keyViewList");
+			keyViewList.Name = "keyViewList";
+			keyViewList.ShowGroups = false;
+			keyViewList.UseCellFormatEvents = true;
+			keyViewList.View = View.Details;
+			keyViewList.FormatCell += keyViewList_FormatCell;
+			keyViewList.KeyUp += keyViewList_KeyUp;
 			// 
 			// nameColumn
 			// 
-			this.nameColumn.AspectName = "Name";
-			this.nameColumn.AutoCompleteEditorMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-			resources.ApplyResources(this.nameColumn, "nameColumn");
+			nameColumn.AspectName = "Name";
+			nameColumn.AutoCompleteEditorMode = AutoCompleteMode.Suggest;
+			resources.ApplyResources(nameColumn, "nameColumn");
 			// 
 			// valueColumn
 			// 
-			this.valueColumn.AspectName = "Value";
-			this.valueColumn.IsEditable = false;
-			resources.ApplyResources(this.valueColumn, "valueColumn");
+			valueColumn.AspectName = "Value";
+			valueColumn.AutoCompleteEditor = false;
+			valueColumn.AutoCompleteEditorMode = AutoCompleteMode.None;
+			valueColumn.IsEditable = false;
+			resources.ApplyResources(valueColumn, "valueColumn");
+			valueColumn.UseFiltering = false;
 			// 
 			// cellContextMenu
 			// 
-			this.cellContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createKeyMenuItem,
-            this.dumpThisKeyToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.seeDecryptedNameToolStripMenuItem});
-			this.cellContextMenu.Name = "cellContextMenu";
-			this.cellContextMenu.ShowImageMargin = false;
-			resources.ApplyResources(this.cellContextMenu, "cellContextMenu");
+			cellContextMenu.Items.AddRange(new ToolStripItem[] { createKeyMenuItem, dumpThisKeyToolStripMenuItem, deleteToolStripMenuItem, toolStripSeparator1, seeDecryptedNameToolStripMenuItem });
+			cellContextMenu.Name = "cellContextMenu";
+			cellContextMenu.ShowImageMargin = false;
+			resources.ApplyResources(cellContextMenu, "cellContextMenu");
 			// 
 			// createKeyMenuItem
 			// 
-			this.createKeyMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.intToolStripMenuItem,
-            this.floatToolStripMenuItem,
-            this.stringToolStripMenuItem});
-			this.createKeyMenuItem.Name = "createKeyMenuItem";
-			resources.ApplyResources(this.createKeyMenuItem, "createKeyMenuItem");
+			createKeyMenuItem.DropDownItems.AddRange(new ToolStripItem[] { intToolStripMenuItem, floatToolStripMenuItem, stringToolStripMenuItem });
+			createKeyMenuItem.Name = "createKeyMenuItem";
+			resources.ApplyResources(createKeyMenuItem, "createKeyMenuItem");
 			// 
 			// intToolStripMenuItem
 			// 
-			this.intToolStripMenuItem.Name = "intToolStripMenuItem";
-			resources.ApplyResources(this.intToolStripMenuItem, "intToolStripMenuItem");
-			this.intToolStripMenuItem.Click += new System.EventHandler(this.createKeyToolStripMenuItem_Click);
+			intToolStripMenuItem.Name = "intToolStripMenuItem";
+			resources.ApplyResources(intToolStripMenuItem, "intToolStripMenuItem");
+			intToolStripMenuItem.Click += createKeyToolStripMenuItem_Click;
 			// 
 			// floatToolStripMenuItem
 			// 
-			this.floatToolStripMenuItem.Name = "floatToolStripMenuItem";
-			resources.ApplyResources(this.floatToolStripMenuItem, "floatToolStripMenuItem");
-			this.floatToolStripMenuItem.Click += new System.EventHandler(this.createKeyToolStripMenuItem_Click);
+			floatToolStripMenuItem.Name = "floatToolStripMenuItem";
+			resources.ApplyResources(floatToolStripMenuItem, "floatToolStripMenuItem");
+			floatToolStripMenuItem.Click += createKeyToolStripMenuItem_Click;
 			// 
 			// stringToolStripMenuItem
 			// 
-			this.stringToolStripMenuItem.Name = "stringToolStripMenuItem";
-			resources.ApplyResources(this.stringToolStripMenuItem, "stringToolStripMenuItem");
-			this.stringToolStripMenuItem.Click += new System.EventHandler(this.createKeyToolStripMenuItem_Click);
+			stringToolStripMenuItem.Name = "stringToolStripMenuItem";
+			resources.ApplyResources(stringToolStripMenuItem, "stringToolStripMenuItem");
+			stringToolStripMenuItem.Click += createKeyToolStripMenuItem_Click;
 			// 
 			// dumpThisKeyToolStripMenuItem
 			// 
-			this.dumpThisKeyToolStripMenuItem.Name = "dumpThisKeyToolStripMenuItem";
-			resources.ApplyResources(this.dumpThisKeyToolStripMenuItem, "dumpThisKeyToolStripMenuItem");
+			dumpThisKeyToolStripMenuItem.Name = "dumpThisKeyToolStripMenuItem";
+			resources.ApplyResources(dumpThisKeyToolStripMenuItem, "dumpThisKeyToolStripMenuItem");
+			dumpThisKeyToolStripMenuItem.Click += dumpThisKeyToolStripMenuItem_Click;
 			// 
 			// deleteToolStripMenuItem
 			// 
-			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-			resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
-			this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+			deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+			resources.ApplyResources(deleteToolStripMenuItem, "deleteToolStripMenuItem");
+			deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
 			// 
 			// toolStripSeparator1
 			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+			toolStripSeparator1.Name = "toolStripSeparator1";
+			resources.ApplyResources(toolStripSeparator1, "toolStripSeparator1");
 			// 
 			// seeDecryptedNameToolStripMenuItem
 			// 
-			this.seeDecryptedNameToolStripMenuItem.Name = "seeDecryptedNameToolStripMenuItem";
-			resources.ApplyResources(this.seeDecryptedNameToolStripMenuItem, "seeDecryptedNameToolStripMenuItem");
-			this.seeDecryptedNameToolStripMenuItem.Click += new System.EventHandler(this.seeDecryptedNameToolStripMenuItem_Click);
+			seeDecryptedNameToolStripMenuItem.Name = "seeDecryptedNameToolStripMenuItem";
+			resources.ApplyResources(seeDecryptedNameToolStripMenuItem, "seeDecryptedNameToolStripMenuItem");
+			seeDecryptedNameToolStripMenuItem.Click += seeDecryptedNameToolStripMenuItem_Click;
 			// 
 			// DecrypterForm
 			// 
 			resources.ApplyResources(this, "$this");
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.keyViewList);
-			this.Controls.Add(this.dumpGroupBox);
-			this.Controls.Add(this.regGroupBox);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-			this.MaximizeBox = false;
-			this.Name = "DecrypterForm";
-			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-			this.Activated += new System.EventHandler(this.DecrypterForm_Activated);
-			this.Deactivate += new System.EventHandler(this.DecrypterForm_Deactivate);
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DecrypterForm_FormClosing);
-			this.Load += new System.EventHandler(this.Form1_Load);
-			this.regGroupBox.ResumeLayout(false);
-			this.regGroupBox.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.versionUpDown)).EndInit();
-			this.dumpGroupBox.ResumeLayout(false);
-			this.dumpGroupBox.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.keyViewList)).EndInit();
-			this.cellContextMenu.ResumeLayout(false);
-			this.ResumeLayout(false);
-
+			AutoScaleMode = AutoScaleMode.Font;
+			Controls.Add(keyViewList);
+			Controls.Add(dumpGroupBox);
+			Controls.Add(regGroupBox);
+			FormBorderStyle = FormBorderStyle.FixedSingle;
+			MaximizeBox = false;
+			Name = "DecrypterForm";
+			SizeGripStyle = SizeGripStyle.Hide;
+			Activated += DecrypterForm_Activated;
+			Deactivate += DecrypterForm_Deactivate;
+			FormClosing += DecrypterForm_FormClosing;
+			Load += Form1_Load;
+			regGroupBox.ResumeLayout(false);
+			regGroupBox.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)versionUpDown).EndInit();
+			dumpGroupBox.ResumeLayout(false);
+			dumpGroupBox.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)keyViewList).EndInit();
+			cellContextMenu.ResumeLayout(false);
+			ResumeLayout(false);
 		}
 
-        private TextBox cryptoKeyBox;
-        private Button decencButton;
-        private GroupBox regGroupBox;
-        private Label label1;
-        private TextBox registryPathBox;
-        private Label label2;
-        private System.ComponentModel.IContainer components;
-        private Button loadButton;
-        private ProgressBar progressBar1;
-        private Button getKeyButton;
-        private GroupBox dumpGroupBox;
-        private Label label3;
-        private SaveFileDialog dumpSaveDialog;
-        private TextBox textBox1;
-        private Button openDialogButton1;
-        private BrightIdeasSoftware.ObjectListView keyViewList;
-        private BrightIdeasSoftware.OLVColumn nameColumn;
-        private BrightIdeasSoftware.OLVColumn valueColumn;
-        private Button saveDumpButton;
-        private Label label4;
-        private NumericUpDown versionUpDown;
+		private TextBox cryptoKeyBox;
+		private Button decencButton;
+		private GroupBox regGroupBox;
+		private Label label1;
+		private TextBox registryPathBox;
+		private Label label2;
+		private System.ComponentModel.IContainer components;
+		private Button loadButton;
+		private ProgressBar progressBar1;
+		private Button getKeyButton;
+		private GroupBox dumpGroupBox;
+		private Label label3;
+		private SaveFileDialog dumpSaveDialog;
+		private TextBox textBox1;
+		private Button openDialogButton1;
+		private BrightIdeasSoftware.ObjectListView keyViewList;
+		private BrightIdeasSoftware.OLVColumn nameColumn;
+		private BrightIdeasSoftware.OLVColumn valueColumn;
+		private Button saveDumpButton;
+		private Label label4;
+		private NumericUpDown versionUpDown;
 		private ContextMenuStrip cellContextMenu;
 		private ToolStripMenuItem createKeyMenuItem;
 		private ToolStripMenuItem dumpThisKeyToolStripMenuItem;

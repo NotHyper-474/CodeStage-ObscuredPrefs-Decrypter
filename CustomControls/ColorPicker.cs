@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using static CodeStage_Decrypter.EncrypterDecrypter;
 using Color = System.Drawing.Color;
 using UColor = CodeStage_Decrypter.EncrypterDecrypter.Color32;
 

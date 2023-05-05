@@ -24,9 +24,9 @@ namespace CodeStage_Decrypter
 
 		private readonly Dictionary<string, Type> aliasToType = new Dictionary<string, Type>()
 		{
-			{ "Int", typeof(Int32) },
-			{ "Float", typeof(Single) },
-			{ "String", typeof(String) },
+			{ "Int", typeof(int) },
+			{ "Float", typeof(float) },
+			{ "String", typeof(string) },
 		};
 
 		private RegistryKey gameKey;
@@ -66,7 +66,9 @@ namespace CodeStage_Decrypter
 				registryPathBox.Text = Properties.Settings.Default.RegPath;
 			else Properties.Settings.Default.RegPath = registryPathBox.Text;
 
+			ObjectListView.EditorRegistry.Register(typeof(float), typeof(CustomFloatCellEditor));
 			ObjectListView.EditorRegistry.Register(typeof(EncrypterDecrypter.Color32), typeof(ColorPicker));
+
 			nameColumn.AspectName = "HashedName";
 			valueColumn.Renderer = new Color32Renderer();
 		}
@@ -77,53 +79,6 @@ namespace CodeStage_Decrypter
 			FreeConsole();
 #endif
 		}
-
-		#region Thread-Safe Methods
-		internal void ProgressBarSet(int value)
-		{
-			if (progressBar1.InvokeRequired)
-				progressBar1.Invoke(new Action(() => progressBar1.Value = value));
-			else progressBar1.Value = value;
-		}
-
-		internal void ProgressBarIncrement(int value)
-		{
-			if (progressBar1.InvokeRequired)
-				progressBar1.Invoke(new Action(() => progressBar1.Increment(value)));
-			else progressBar1.Increment(value);
-		}
-
-		internal void ProgressBarMaximumSet(int max)
-		{
-			if (progressBar1.InvokeRequired)
-				progressBar1.Invoke(new Action(() => progressBar1.Maximum = max));
-			else progressBar1.Maximum = max;
-		}
-
-		internal static void ListViewAdd(ObjectListView view, PrefsKey item)
-		{
-			if (view.InvokeRequired)
-				view.Invoke(() => view.AddObject(item));
-			else view.AddObject(item);
-		}
-
-		internal static ListViewItem ListViewItemGet(ListView view, int idx)
-		{
-			return (ListViewItem)view.Invoke(new Func<ListViewItem>(() => view.Items[idx]));
-		}
-
-		internal void ListViewSubItemTextSet(ListView view, int idx, int subIdx, string value)
-		{
-			Invoke(new Action(() => view.Items[idx].SubItems[subIdx].Text = value));
-		}
-
-		internal void ListViewItemTextSet(ListView view, int idx, string text)
-		{
-			if (view.InvokeRequired)
-				view.Invoke(new Action(() => view.Items[idx].Text = text));
-			else view.Items[idx].Text = text;
-		}
-		#endregion
 
 		private void ToggleMode()
 		{
@@ -145,11 +100,19 @@ namespace CodeStage_Decrypter
 		private void decencButton_Click(object sender, EventArgs e)
 		{
 			var key = cryptoKeyBox.Text;
+			if (key.Length == 0)
+			{
+				MessageBox.Show("Key cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
 			Thread t = new Thread(() =>
 			{
 				int i = 0;
-				this.Invoke(() => keyViewList.BeginUpdate());
-				ProgressBarSet(0);
+				this.Invoke(() =>
+				{
+					keyViewList.BeginUpdate();
+					progressBar1.Value = 0;
+				});
 				var objs = keyViewList.Objects;
 				this.Invoke(() => decencButton.Enabled = false);
 				foreach (var p in objs)
@@ -177,14 +140,17 @@ namespace CodeStage_Decrypter
 							Console.WriteLine("Possible PrefsKey decrypted with incorrect key: " + item.Name);
 					}
 				INC:
-					ProgressBarIncrement(1);
+					this.Invoke(() => progressBar1.Increment(1));
 					i++;
 				}
-				this.Invoke(() => keyViewList.EndUpdate());
-				this.Invoke(() => keyViewList.SetObjects(objs, false));
-				this.Invoke(() => valueColumn.IsEditable = true);
-				this.Invoke(() => decencButton.Enabled = true);
-				this.Invoke(() => ToggleMode());
+				this.Invoke(() =>
+				{
+					keyViewList.EndUpdate();
+					keyViewList.SetObjects(objs, false);
+					valueColumn.IsEditable = true;
+					decencButton.Enabled = true;
+					ToggleMode();
+				});
 			});
 			t.Start();
 		}
@@ -209,14 +175,17 @@ namespace CodeStage_Decrypter
 				return;
 			}
 			const string path = @"software\NH474DECRYPTER\TEMP";
+			PrefsKey[] dump;
 			RegistryKey editKey = Registry.CurrentUser.CreateSubKey(path);
-			if (keyViewList.Objects == null) keyViewList.Objects = Array.Empty<object>();
-			foreach (var item in keyViewList.Objects)
+			keyViewList.Objects ??= Array.Empty<PrefsKey>();
+			if (keys != null && keys.Length > 0)
+				dump = keys;
+			else dump = keyViewList.Objects.Cast<PrefsKey>().ToArray();
+			foreach (var item in dump)
 			{
-				PrefsKey save = (PrefsKey)item;
+				PrefsKey save = item;
 				object value = save.Value;
-				if (value == null)
-					value = (byte)char.MinValue;
+				value ??= (byte)0;
 				if (value is bool bol)
 					value = BitConverter.GetBytes(bol);
 				if (value is string str)
@@ -235,8 +204,8 @@ namespace CodeStage_Decrypter
 			editKey.Flush();
 			Process reg = new Process();
 			reg.StartInfo.FileName = "cmd.exe";
-			reg.StartInfo.Arguments = $@"/c reg export HKCU\{path} " + textBox1.Text + " /y";
-			reg.StartInfo.CreateNoWindow = true;
+			reg.StartInfo.Arguments = $@"/c reg export HKCU\{path} """ + savePath + "\" /y";
+			reg.StartInfo.CreateNoWindow = false;
 			reg.Start();
 			reg.WaitForExit();
 			var file = File.ReadAllText(savePath);
@@ -267,7 +236,12 @@ namespace CodeStage_Decrypter
 		{
 			Thread t = new Thread(() =>
 				{
-					this.Invoke(() => registryPathBox.Text = registryPathBox.Text.Replace(CUR_USER, string.Empty));
+					this.Invoke(() =>
+					{
+						string path = registryPathBox.Text.Replace(CUR_USER, string.Empty);
+						path = path.Replace('/', '\\');
+						registryPathBox.Text = path;
+					});
 					gameKey = Registry.CurrentUser.OpenSubKey(registryPathBox.Text);
 
 					if (gameKey == null)
@@ -281,14 +255,18 @@ namespace CodeStage_Decrypter
 
 					ArrayList values = new ArrayList(gameKey.ValueCount);
 					ignoredKeys.Clear();
-					this.Invoke(() => keyViewList.ClearObjects());
-					this.Invoke(() => valueColumn.IsEditable = false);
-					this.Invoke(() => keyViewList.CellRightClick -= keyViewList_CellRightClick);
-					this.Invoke(() => keyViewList.CellEditStarting -= keyViewList_EditStarting);
-					this.Invoke(() => keyViewList.CellEditFinishing -= keyViewList_EditFinished);
-					ProgressBarSet(0);
-					ProgressBarMaximumSet(gameKey.ValueCount);
-					this.Invoke(() => keyViewList.BeginUpdate());
+					// I was too stupid to see I could just put everything inside one Invoke() call, smh
+					this.Invoke(() =>
+					{
+						keyViewList.ClearObjects();
+						valueColumn.IsEditable = false;
+						keyViewList.CellRightClick -= keyViewList_CellRightClick;
+						keyViewList.CellEditStarting -= keyViewList_EditStarting;
+						keyViewList.CellEditFinishing -= keyViewList_EditFinished;
+						progressBar1.Value = 0;
+						progressBar1.Maximum = gameKey.ValueCount;
+						keyViewList.BeginUpdate();
+					});
 					foreach (var name in gameKey.GetValueNames())
 					{
 						RegistryValueKind kind = gameKey.GetValueKind(name);
@@ -329,20 +307,27 @@ namespace CodeStage_Decrypter
 						int idx = progressBar1.Value;
 						var cleanName = name.Remove(name.IndexOf("_h"));
 						var newKey = new PrefsKey(cleanName, values[idx], out _);
-						if (cleanName.ToLower().Contains("unity") || cleanName.ToLower().Contains("screenmanager")
-							|| cleanName.ToLower().Contains("resolutiondialog"))
+						var lcName = cleanName.ToLower();
+						if (lcName.Contains("unity") || lcName.Contains("screenmanager")
+							|| lcName.Contains("resolutiondialog"))
 							ignoredKeys.Add(newKey);
-						ListViewAdd(keyViewList, newKey);
-						ProgressBarIncrement(1);
+						this.Invoke(() =>
+						{
+							keyViewList.AddObject(newKey);
+							progressBar1.Increment(1);
+						});
 					}
-					this.Invoke(() => keyViewList.CellRightClick += keyViewList_CellRightClick);
-					this.Invoke(() => keyViewList.CellEditStarting += keyViewList_EditStarting);
-					this.Invoke(() => keyViewList.CellEditFinished += keyViewList_EditFinished);
+					this.Invoke(() =>
+					{
+						keyViewList.CellRightClick += keyViewList_CellRightClick;
+						keyViewList.CellEditStarting += keyViewList_EditStarting;
+						keyViewList.CellEditFinished += keyViewList_EditFinished;
 
-					this.Invoke(() => keyViewList.EndUpdate());
-					this.Invoke(() => loadButton.Enabled = true);
-					this.Invoke(() => decencButton.Enabled = true);
-					this.Invoke(() => getKeyButton.Enabled = true);
+						keyViewList.EndUpdate();
+						loadButton.Enabled = true;
+						decencButton.Enabled = true;
+						getKeyButton.Enabled = true;
+					});
 				});
 			t.Start();
 		}
@@ -367,7 +352,6 @@ namespace CodeStage_Decrypter
 				}
 				return;
 			}
-			//nameColumn.AspectName = nameof(PrefsKey.Name);
 			var key = args.RowObject as PrefsKey;
 			key.isEditing = true;
 			args.Control.Text = key.Name;
@@ -385,6 +369,7 @@ namespace CodeStage_Decrypter
 						int newMax = progressBar1.Maximum - keyViewList.SelectedObjects.Count;
 						newMax = Math.Clamp(newMax, 0, int.MaxValue);
 						progressBar1.Maximum = newMax;
+						progressBar1.Value = newMax;
 						keyViewList.RemoveObjects(keyViewList.SelectedObjects);
 					}
 					break;
@@ -395,7 +380,6 @@ namespace CodeStage_Decrypter
 		{
 			if (args.Column == nameColumn)
 			{
-				//nameColumn.AspectName = nameof(PrefsKey.HashedName);
 				(args.RowObject as PrefsKey).isEditing = false;
 			}
 
@@ -406,7 +390,60 @@ namespace CodeStage_Decrypter
 		{
 			seeDecryptedNameToolStripMenuItem.Available = !encryptMode &&
 				keyViewList.SelectedObject != null;
+			dumpThisKeyToolStripMenuItem.Available = keyViewList.SelectedObjects.Count > 0;
+			dumpThisKeyToolStripMenuItem.Name = keyViewList.SelectedObjects.Count == 1 ?
+				"Dump Selected Key" : "Dump Selected Keys";
 			cellContextMenu.Show(Cursor.Position);
+		}
+		#endregion
+
+		#region KeyEdit Context Menu Methods
+		private void createKeyToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (sender is ToolStripItem c)
+			{
+				aliasToType.TryGetValue(c.Text, out Type type);
+				object value;
+				if (type.IsClass)
+					value = Activator.CreateInstance(type, Array.Empty<char>());
+				else
+					value = Activator.CreateInstance(type);
+				keyViewList.AddObject(new PrefsKey("New " + c.Text, value));
+			}
+			else throw new InvalidOperationException("Sender is not a " + nameof(ToolStripItem));
+		}
+		private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var obj = (IList)keyViewList.Objects;
+			var key = keyViewList.SelectedObject;
+			if (key != null)
+			{
+				obj.Remove(key);
+			}
+			keyViewList.Objects = obj;
+		}
+
+
+		private void seeDecryptedNameToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			PrefsKey prefsKey = (PrefsKey)keyViewList.SelectedObject;
+			if (!Base64Utils.IsBase64(prefsKey.Name))
+			{
+				MessageBox.Show("Key has invalid Base64 name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
+			MessageBox.Show(EncrypterDecrypter.Decrypt(prefsKey.Name, cryptoKeyBox.Text.ToArray()));
+		}
+
+
+		private void dumpThisKeyToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (dumpSaveDialog.ShowDialog() == DialogResult.OK)
+			{
+				PrefsKey[] keys = new PrefsKey[keyViewList.SelectedObjects.Count];
+				for (int i = 0; i < keyViewList.SelectedObjects.Count; i++)
+					keys[i] = (PrefsKey)keyViewList.SelectedObjects[i];
+				SaveDump(dumpSaveDialog.FileName, keys);
+			}
 		}
 		#endregion
 
@@ -454,43 +491,5 @@ namespace CodeStage_Decrypter
 		{
 			EncrypterDecrypter.Version = (byte)versionUpDown.Value;
 		}
-
-		#region KeyEdit Context Menu Methods
-		private void createKeyToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			if (sender is ToolStripItem c)
-			{
-				aliasToType.TryGetValue(c.Text, out Type type);
-				object value;
-				if (type.IsClass)
-					value = Activator.CreateInstance(type, Array.Empty<char>());
-				else
-					value = Activator.CreateInstance(type);
-				keyViewList.AddObject(new PrefsKey("New " + c.Text, value));
-			}
-			else throw new InvalidOperationException("Sender is not a " + nameof(ToolStripItem));
-		}
-		private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			var obj = (IList)keyViewList.Objects;
-			var key = keyViewList.SelectedObject;
-			if (key != null)
-			{
-				obj.Remove(key);
-			}
-			keyViewList.Objects = obj;
-		}
-		
-
-		private void seeDecryptedNameToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			PrefsKey prefsKey = (PrefsKey)keyViewList.SelectedObject;
-			if (!Base64Utils.IsBase64(prefsKey.Name))
-			{
-				MessageBox.Show("Key has invalid Base64 name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-			}
-			MessageBox.Show(EncrypterDecrypter.Decrypt(prefsKey.Name, cryptoKeyBox.Text.ToArray()));
-		}
-		#endregion
 	}
 }
