@@ -2,7 +2,7 @@
 Simple decrypter, encrypter and viewer (see reg-viewer branch) for CodeStage [ACTk](https://codestage.net/uas/actk/)'s ObscuredPrefs.  
 # Troubleshooting (mostly for v0.1.0)
 ### Where do I find the cryptokey?
-The cryptokey will **always** be stored inside the key named as the MD2 hash of "ElonShotMarsWithACar" (9978e9f39c218d674463dab9dc728bd6)
+The cryptokey will **always** (unless it's using older ACTk, in that case use e806f6 as the key) be stored inside the key named as the MD2 hash of "ElonShotMarsWithACar" (9978e9f39c218d674463dab9dc728bd6)
 inside the game's registry. There it will be in base64 and can be easily decoded.  
 The cryptokey is composed of randomly-generated characters so don't be weirded out when you see it.
 
