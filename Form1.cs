@@ -305,11 +305,22 @@ namespace CodeStage_Decrypter
 						}
 
 						int idx = progressBar1.Value;
-						var cleanName = name.Remove(name.IndexOf("_h"));
+						var idxH = name.IndexOf("_h");
+						string cleanName;
+						bool invalidPrefsKey = false;
+						if (idxH == -1)
+						{
+							cleanName = name;
+							invalidPrefsKey = true;
+						}
+						else
+						{
+							cleanName = name.Remove(idxH);
+						}
 						var newKey = new PrefsKey(cleanName, values[idx], out _);
 						var lcName = cleanName.ToLower();
 						if (lcName.Contains("unity") || lcName.Contains("screenmanager")
-							|| lcName.Contains("resolutiondialog"))
+							|| lcName.Contains("resolutiondialog") || invalidPrefsKey)
 							ignoredKeys.Add(newKey);
 						this.Invoke(() =>
 						{

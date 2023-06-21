@@ -20,10 +20,11 @@ namespace CodeStage_Decrypter
 
         public string HashedName
         {
-            get => isEditing ? Name : GetHashedKey(Name);
+            get => isEditing || isInvalid ? Name : GetHashedKey(Name);
             set
             {
                 Name = value.Contains("_h") ? value.Remove(value.IndexOf("_h")) : value;
+                if (isInvalid) return;
                 oldHash = Hash;
                 Hash = GetHash(Name);
             }
@@ -48,11 +49,13 @@ namespace CodeStage_Decrypter
         public uint oldHash { get; protected set; }
 
         public bool isEditing;
+        public bool isInvalid;
 
         private object _value;
 
         public void Encrypt(string cryptoKey)
         {
+            if (isInvalid) return;
             var decryptedPrefs = Name;
             HashedName = EncrypterDecrypter.Encrypt(Name, cryptoKey.ToCharArray());
             Value = EncrypterDecrypter.EncryptObject(Value, decryptedPrefs);

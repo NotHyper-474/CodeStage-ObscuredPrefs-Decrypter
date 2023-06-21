@@ -60,7 +60,7 @@
 
   <ItemGroup>
     <Reference Include="UnityEngine">
-      <HintPath>E:\Programs\Unity Technologies\2021.2.19f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>G:\Program Files\Unity Technologies\2020.3.45f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
 
