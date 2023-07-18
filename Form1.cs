@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Reflection;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CodeStage_Decrypter
@@ -79,18 +74,16 @@ namespace CodeStage_Decrypter
 			{
 				if (valueMode)
 				{
-					byte[] result = EncrypterDecrypter.DecryptData(new string(key), text);
-					if ((result != null) && Encoding.UTF8.GetString(result) == "SAVES_TAMPERED")
-						MessageBox.Show("Could not decrypt value. The value was probably tampered with.");
-					var type = EncrypterDecrypter.GetRawDataType(text);
-					//MessageBox.Show(Enum.GetName(typeof(EncrypterDecrypter.DataType), type));
-					resultBox.Text = result.Length > 0 ? Encoding.UTF8.GetString(result) : string.Empty;
+					string result = (string)EncrypterDecrypter.DecryptObject(text, new string(key));
+					resultBox.Text = !string.IsNullOrEmpty(result) ? result : "Something went wrong, input is probably invalid.";
 					return;
 				}
 				if (!Base64Utils.IsBase64(text))
 				{
-					MessageBox.Show("Invalid Base64 text. Decrypting without decoding.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-					resultBox.Text = new string(EncrypterDecrypter.EncryptDecrypt(text.ToCharArray(), key));
+					MessageBox.Show("Invalid Base64 text. Decrypting anyway.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					resultBox.Text = new string((char[])typeof(EncrypterDecrypter).GetMethod("EncryptDecrypt",
+						BindingFlags.Static | BindingFlags.NonPublic).
+						Invoke(null, new object[] { text.ToCharArray(), key }));
 					return;
 				}
 				resultBox.Text = EncrypterDecrypter.Decrypt(text, key);
