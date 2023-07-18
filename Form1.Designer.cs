@@ -4,7 +4,6 @@ namespace CodeStage_Decrypter
 {
 	public partial class DecrypterForm
 	{
-		private Label label1;
 		private TextBox cryptoKeyBox;
 		private TextBox textBox;
 		private CheckBox encryptModeCheck;
@@ -18,81 +17,83 @@ namespace CodeStage_Decrypter
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DecrypterForm));
-            this.label1 = new System.Windows.Forms.Label();
-            this.cryptoKeyBox = new System.Windows.Forms.TextBox();
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.encryptModeCheck = new System.Windows.Forms.CheckBox();
-            this.decencButton = new System.Windows.Forms.Button();
-            this.valueModeCheck = new System.Windows.Forms.CheckBox();
-            this.resultBox = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // cryptoKeyBox
-            // 
-            resources.ApplyResources(this.cryptoKeyBox, "cryptoKeyBox");
-            this.cryptoKeyBox.Name = "cryptoKeyBox";
-            this.cryptoKeyBox.TextChanged += new System.EventHandler(this.cryptoKeyBox_TextChanged);
-            // 
-            // textBox
-            // 
-            resources.ApplyResources(this.textBox, "textBox");
-            this.textBox.Name = "textBox";
-            // 
-            // encryptModeCheck
-            // 
-            resources.ApplyResources(this.encryptModeCheck, "encryptModeCheck");
-            this.encryptModeCheck.Name = "encryptModeCheck";
-            this.encryptModeCheck.UseVisualStyleBackColor = true;
-            this.encryptModeCheck.CheckedChanged += new System.EventHandler(this.encryptModeCheck_CheckedChanged);
-            // 
-            // decencButton
-            // 
-            resources.ApplyResources(this.decencButton, "decencButton");
-            this.decencButton.Name = "decencButton";
-            this.decencButton.UseVisualStyleBackColor = true;
-            this.decencButton.Click += new System.EventHandler(this.decencButton_Click);
-            // 
-            // valueModeCheck
-            // 
-            resources.ApplyResources(this.valueModeCheck, "valueModeCheck");
-            this.valueModeCheck.Name = "valueModeCheck";
-            this.valueModeCheck.UseVisualStyleBackColor = true;
-            this.valueModeCheck.CheckedChanged += new System.EventHandler(this.valueModeCheck_CheckedChanged);
-            // 
-            // resultBox
-            // 
-            this.resultBox.HideSelection = false;
-            resources.ApplyResources(this.resultBox, "resultBox");
-            this.resultBox.Name = "resultBox";
-            this.resultBox.ReadOnly = true;
-            // 
-            // DecrypterForm
-            // 
-            resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.resultBox);
-            this.Controls.Add(this.valueModeCheck);
-            this.Controls.Add(this.decencButton);
-            this.Controls.Add(this.encryptModeCheck);
-            this.Controls.Add(this.textBox);
-            this.Controls.Add(this.cryptoKeyBox);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "DecrypterForm";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.Enter += new System.EventHandler(this.DecrypterForm_Enter);
-            this.Leave += new System.EventHandler(this.DecrypterForm_Leave);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DecrypterForm));
+			cryptoKeyBox = new TextBox();
+			textBox = new TextBox();
+			encryptModeCheck = new CheckBox();
+			decencButton = new Button();
+			valueModeCheck = new CheckBox();
+			resultBox = new TextBox();
+			label1 = new Label();
+			SuspendLayout();
+			// 
+			// cryptoKeyBox
+			// 
+			resources.ApplyResources(cryptoKeyBox, "cryptoKeyBox");
+			cryptoKeyBox.Name = "cryptoKeyBox";
+			cryptoKeyBox.TextChanged += cryptoKeyBox_TextChanged;
+			// 
+			// textBox
+			// 
+			resources.ApplyResources(textBox, "textBox");
+			textBox.Name = "textBox";
+			// 
+			// encryptModeCheck
+			// 
+			resources.ApplyResources(encryptModeCheck, "encryptModeCheck");
+			encryptModeCheck.Name = "encryptModeCheck";
+			encryptModeCheck.UseVisualStyleBackColor = true;
+			encryptModeCheck.CheckedChanged += encryptModeCheck_CheckedChanged;
+			// 
+			// decencButton
+			// 
+			resources.ApplyResources(decencButton, "decencButton");
+			decencButton.Name = "decencButton";
+			decencButton.UseVisualStyleBackColor = true;
+			decencButton.Click += decencButton_Click;
+			// 
+			// valueModeCheck
+			// 
+			resources.ApplyResources(valueModeCheck, "valueModeCheck");
+			valueModeCheck.Name = "valueModeCheck";
+			valueModeCheck.UseVisualStyleBackColor = true;
+			valueModeCheck.CheckedChanged += valueModeCheck_CheckedChanged;
+			// 
+			// resultBox
+			// 
+			resultBox.HideSelection = false;
+			resources.ApplyResources(resultBox, "resultBox");
+			resultBox.Name = "resultBox";
+			resultBox.ReadOnly = true;
+			// 
+			// label1
+			// 
+			resources.ApplyResources(label1, "label1");
+			label1.Name = "label1";
+			label1.Click += this.label1_Click;
+			// 
+			// DecrypterForm
+			// 
+			resources.ApplyResources(this, "$this");
+			AutoScaleMode = AutoScaleMode.Font;
+			Controls.Add(resultBox);
+			Controls.Add(valueModeCheck);
+			Controls.Add(decencButton);
+			Controls.Add(encryptModeCheck);
+			Controls.Add(textBox);
+			Controls.Add(cryptoKeyBox);
+			Controls.Add(label1);
+			FormBorderStyle = FormBorderStyle.FixedSingle;
+			MaximizeBox = false;
+			Name = "DecrypterForm";
+			SizeGripStyle = SizeGripStyle.Hide;
+			Load += Form1_Load;
+			Enter += DecrypterForm_Enter;
+			Leave += DecrypterForm_Leave;
+			ResumeLayout(false);
+			PerformLayout();
 		}
+
+		private Label label1;
 	}
 }

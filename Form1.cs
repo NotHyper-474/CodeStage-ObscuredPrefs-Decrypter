@@ -79,12 +79,9 @@ namespace CodeStage_Decrypter
 			{
 				if (valueMode)
 				{
-					byte[] result = EncrypterDecrypter.DecryptData(new string(key), text);
-					if ((result != null) && Encoding.UTF8.GetString(result) == "SAVES_TAMPERED")
-						MessageBox.Show("Could not decrypt value. The value was probably tampered with.");
+					string result = (string)EncrypterDecrypter.DecryptObject(text, key.ToString());
 					var type = EncrypterDecrypter.GetRawDataType(text);
-					//MessageBox.Show(Enum.GetName(typeof(EncrypterDecrypter.DataType), type));
-					resultBox.Text = result.Length > 0 ? Encoding.UTF8.GetString(result) : string.Empty;
+					resultBox.Text = !string.IsNullOrEmpty(result) ? result : "Something went wrong, input is probably invalid.";
 					return;
 				}
 				if (!Base64Utils.IsBase64(text))
